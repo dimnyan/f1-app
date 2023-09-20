@@ -1,37 +1,30 @@
-// import { useEffect, useState } from "react";
+import { useEffect } from "react";
 // import xml2js from "xml2js";
 
 function Standing() {
   //   console.log("here");
   //   const [dataStanding, setDataStanding] = useState([]);
-  //   const [error, setError] = useState(null);
 
-  //   useEffect(() => {
-  //     fetch("http://ergast.com/api/f1/current/driverStandings")
-  //       .then((response) => {
-  //         response.text();
-  //       })
-  //       .then((data) => {
-  //         try {
-  //           xml2js.parseString(data, (err, result) => {
-  //             if (err) {
-  //               setError(err);
-  //             } else {
-  //               const driverStanding1 =
-  //                 result.MRData.StandingsTable[0].StandingsList[0].DriverStanding.find(
-  //                   (driver) => driver.$.position === "1"
-  //                 );
-  //               setDataStanding(driverStanding1);
-  //             }
-  //           });
-  //         } catch (error) {
-  //           setError(error);
-  //         }
-  //       })
-  //       .catch((error) => {
-  //         setError(error);
-  //       });
-  //   }, []);
+  useEffect(() => {
+    fetch("http://ergast.com/api/f1/current/driverStandings", {
+      method: "GET",
+      headers: {
+        Accept: "text/plain;charset=UTF-8", // Add the headers here
+      },
+    })
+      .then((response) => response.text())
+      .then((data) => {
+        const xmlDocument = new DOMParser().parseFromString(
+          data,
+          "application/xml"
+        );
+        console.log(xmlDocument);
+        // setDataStanding(data);
+      });
+  }, []);
+
+  //   const drivers = xmlDocument.querySelectorAll("Driver");
+
   return (
     <div>
       {/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
