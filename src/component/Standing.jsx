@@ -1,37 +1,37 @@
-import { useEffect, useState } from "react";
-import xml2js from "xml2js";
+// import { useEffect, useState } from "react";
+// import xml2js from "xml2js";
 
 function Standing() {
-  const [dataStanding, setDataStanding] = useState([]);
-  const [error, setError] = useState(null);
+  //   console.log("here");
+  //   const [dataStanding, setDataStanding] = useState([]);
+  //   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    fetch("http://ergast.com/api/f1/current/driverStandings")
-      .then((response) => {
-        response.text();
-      })
-      .then((data) => {
-        console.log(data);
-        try {
-          xml2js.parseString(data, (err, result) => {
-            if (err) {
-              setError(err);
-            } else {
-              const driverStanding1 =
-                result.MRData.StandingsTable[0].StandingsList[0].DriverStanding.find(
-                  (driver) => driver.$.position === "1"
-                );
-              setDataStanding(driverStanding1);
-            }
-          });
-        } catch (error) {
-          setError(error);
-        }
-      })
-      .catch((error) => {
-        setError(error);
-      });
-  }, []);
+  //   useEffect(() => {
+  //     fetch("http://ergast.com/api/f1/current/driverStandings")
+  //       .then((response) => {
+  //         response.text();
+  //       })
+  //       .then((data) => {
+  //         try {
+  //           xml2js.parseString(data, (err, result) => {
+  //             if (err) {
+  //               setError(err);
+  //             } else {
+  //               const driverStanding1 =
+  //                 result.MRData.StandingsTable[0].StandingsList[0].DriverStanding.find(
+  //                   (driver) => driver.$.position === "1"
+  //                 );
+  //               setDataStanding(driverStanding1);
+  //             }
+  //           });
+  //         } catch (error) {
+  //           setError(error);
+  //         }
+  //       })
+  //       .catch((error) => {
+  //         setError(error);
+  //       });
+  //   }, []);
   return (
     <div>
       {/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
@@ -78,7 +78,8 @@ function Standing() {
           </tbody>
         </table>
       </div> */}
-      {error ? (
+      s
+      {/* {error ? (
         <div>
           <p>An error occurred: {error.message}</p>
         </div>
@@ -92,11 +93,10 @@ function Standing() {
           </p>
           <p>Points: {dataStanding.$.points}</p>
           <p>Wins: {dataStanding.$.wins}</p>
-          {/* You can display more information here */}
         </div>
       ) : (
         <p>Loading...</p>
-      )}
+      )} */}
     </div>
   );
 }
