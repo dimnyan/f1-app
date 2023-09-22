@@ -1,9 +1,7 @@
-import { useEffect } from "react";
-// import xml2js from "xml2js";
+import { useEffect, useState } from "react";
 
 function Standing() {
-  //   console.log("here");
-  //   const [dataStanding, setDataStanding] = useState([]);
+  const [dataStandings, setDataStandings] = useState([]);
 
   useEffect(() => {
     fetch("http://ergast.com/api/f1/current/driverStandings", {
@@ -19,77 +17,73 @@ function Standing() {
           "application/xml"
         );
         console.log(xmlDocument);
-        // setDataStanding(data);
+        const driverStandingsArray = Array.from(
+          xmlDocument.querySelectorAll("DriverStanding")
+        );
+
+        const driverData = driverStandingsArray.map((standings) => {
+          const driver = standings.querySelector("Driver");
+          const position = standings.getAttribute("position");
+          const points = standings.getAttribute("points");
+          const givenName = driver.querySelector("GivenName").textContent;
+          const familyName = driver.querySelector("FamilyName").textContent;
+
+          return { position, givenName, familyName, points };
+        });
+        // console.log(driverData);
+
+        setDataStandings(driverData);
       });
   }, []);
 
-  //   const drivers = xmlDocument.querySelectorAll("Driver");
+  console.log(dataStandings);
 
   return (
     <div>
-      {/* <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-10">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Product name
+                Pos
               </th>
               <th scope="col" className="px-6 py-3">
-                Color
+                Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Category
+                Points
               </th>
-              <th scope="col" className="px-6 py-3">
-                Price
-              </th>
-              <th scope="col" className="px-6 py-3">
-                Action
-              </th>
+              {/* <th scope="col" className="px-6 py-3">
+                Profile
+              </th> */}
             </tr>
           </thead>
           <tbody>
-            <tr className="bg-white border-b dark:bg-gray-900 dark:border-gray-700">
-              <th
-                scope="row"
-                className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            {dataStandings.map((driver, index) => (
+              <tr
+                className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+                key={index}
               >
-                Apple MacBook Pro 17
-              </th>
-              <td className="px-6 py-4">Silver</td>
-              <td className="px-6 py-4">Laptop</td>
-              <td className="px-6 py-4">$2999</td>
-              <td className="px-6 py-4">
+                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {driver.position}
+                </td>
+                <td className="px-6 py-4">
+                  {driver.givenName} {driver.familyName}
+                </td>
+                <td className="px-6 py-4">{driver.points}</td>
+                {/* <td className="px-6 py-4">
                 <a
                   href="#"
                   className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
                 >
-                  Edit
+                  View
                 </a>
-              </td>
-            </tr>
+              </td> */}
+              </tr>
+            ))}
           </tbody>
         </table>
-      </div> */}
-      s
-      {/* {error ? (
-        <div>
-          <p>An error occurred: {error.message}</p>
-        </div>
-      ) : dataStanding ? (
-        <div>
-          <h2>Driver Standing - Position 1</h2>
-          <p>Position: {dataStanding.$.position}</p>
-          <p>
-            Driver Name: {dataStanding.Driver[0].GivenName}{" "}
-            {dataStanding.Driver[0].FamilyName}
-          </p>
-          <p>Points: {dataStanding.$.points}</p>
-          <p>Wins: {dataStanding.$.wins}</p>
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )} */}
+      </div>
     </div>
   );
 }
