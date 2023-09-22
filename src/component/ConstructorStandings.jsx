@@ -6,7 +6,7 @@ function ConstructorStandings() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    fetch("http://ergast.com/api/f1/current/constructorStandings", {
+    fetch("https://ergast.com/api/f1/current/constructorStandings", {
       method: "GET",
       headers: {
         Accept: "text/plain;charset=UTF-8",
