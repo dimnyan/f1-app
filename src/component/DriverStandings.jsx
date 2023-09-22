@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 function DriverStandings() {
   const [dataStandings, setDataStandings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [season, setSeason] = useState();
 
   useEffect(() => {
     fetch("https://ergast.com/api/f1/current/driverStandings", {
@@ -17,12 +18,16 @@ function DriverStandings() {
           data,
           "application/xml"
         );
-        // console.log(xmlDocument);
+        console.log(xmlDocument);
         const driverStandingsArray = Array.from(
-          xmlDocument.querySelectorAll("ConstructorStanding")
+          xmlDocument.querySelectorAll("DriverStanding")
         );
 
-        console.log(driverStandingsArray);
+        const season = xmlDocument
+          .querySelector("StandingsTable")
+          .getAttribute("season");
+
+        // console.log(driverStandingsArray);
         const driverData = driverStandingsArray.map((standings) => {
           const driver = standings.querySelector("Driver");
           const position = standings.getAttribute("position");
@@ -37,6 +42,7 @@ function DriverStandings() {
 
         setDataStandings(driverData);
         setIsLoading(false);
+        setSeason(season);
       });
   }, []);
 
@@ -56,7 +62,7 @@ function DriverStandings() {
     <div className="w-full">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-10 flex flex-wrap justify-center ">
         <h1 className="font-bold text-center text-2xl pb-10 w-full">
-          Formula 1 Current Standing
+          {season} Formula 1 Driver Standing
         </h1>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 max-w-xl">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
