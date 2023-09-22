@@ -4,7 +4,7 @@ function Standing() {
   const [dataStandings, setDataStandings] = useState([]);
 
   useEffect(() => {
-    fetch("http://ergast.com/api/f1/current/driverStandings", {
+    fetch("https://ergast.com/api/f1/current/driverStandings", {
       method: "GET",
       headers: {
         Accept: "text/plain;charset=UTF-8", // Add the headers here
