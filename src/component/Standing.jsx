@@ -16,7 +16,7 @@ function Standing() {
           data,
           "application/xml"
         );
-        console.log(xmlDocument);
+        // console.log(xmlDocument);
         const driverStandingsArray = Array.from(
           xmlDocument.querySelectorAll("DriverStanding")
         );
@@ -36,7 +36,7 @@ function Standing() {
       });
   }, []);
 
-  console.log(dataStandings);
+  // console.log(dataStandings);
 
   return (
     <div>
