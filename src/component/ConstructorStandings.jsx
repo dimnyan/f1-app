@@ -18,7 +18,7 @@ function ConstructorStandings() {
           data,
           "application/xml"
         );
-        console.log(xmlDocument);
+        // console.log(xmlDocument);
         const constructorStandingsArrays = Array.from(
           xmlDocument.querySelectorAll("ConstructorStanding")
         );
