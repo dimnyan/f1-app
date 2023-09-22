@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-function Standing() {
+function DriverStandings() {
   const [dataStandings, setDataStandings] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -19,9 +19,10 @@ function Standing() {
         );
         // console.log(xmlDocument);
         const driverStandingsArray = Array.from(
-          xmlDocument.querySelectorAll("DriverStanding")
+          xmlDocument.querySelectorAll("ConstructorStanding")
         );
 
+        console.log(driverStandingsArray);
         const driverData = driverStandingsArray.map((standings) => {
           const driver = standings.querySelector("Driver");
           const position = standings.getAttribute("position");
@@ -33,7 +34,6 @@ function Standing() {
 
           return { position, givenName, familyName, points, constructorName };
         });
-        // console.log(driverData);
 
         setDataStandings(driverData);
         setIsLoading(false);
@@ -111,4 +111,4 @@ function Standing() {
   );
 }
 
-export default Standing;
+export default DriverStandings;

@@ -1,9 +1,27 @@
-import Standing from "./component/Standing";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Navbar from "./component/Navbar";
+import DriverStandings from "./component/DriverStandings";
+import ConstructorStandings from "./component/ConstructorStandings";
 
 function App() {
   return (
     <>
-      <Standing />
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Navigate to={"/driver-standings"} />} />
+          <Route path="/driver-standings" element={<DriverStandings />} />
+          <Route
+            path="/constructor-standings"
+            element={<ConstructorStandings />}
+          />
+        </Routes>
+      </Router>
     </>
   );
 }
