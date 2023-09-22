@@ -43,14 +43,20 @@ function Standing() {
   // console.log(dataStandings);
 
   if (isLoading) {
-    return <p className="text-center">Loading...</p>;
+    return (
+      <div className="w-full h-screen flex items-center justify-center">
+        <p className="text-center items-center font-bold text-2xl">
+          Loading...
+        </p>
+      </div>
+    );
   }
 
   return (
     <div className="w-full">
       <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-10 flex flex-wrap justify-center ">
-        <h1 className="font-bold text-center text-2xl p-5 w-full">
-          Current Standings
+        <h1 className="font-bold text-center text-2xl pb-10 w-full">
+          Formula 1 Current Standing
         </h1>
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 max-w-xl">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
