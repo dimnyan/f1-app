@@ -60,23 +60,23 @@ function DriverStandings() {
 
   return (
     <div className="w-full">
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg p-10 flex flex-wrap justify-center ">
+      <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-5 py-10 md:p-10 flex flex-wrap justify-center ">
         <h1 className="font-bold text-center text-2xl pb-10 w-full">
           {season} Formula 1 Driver Standing
         </h1>
-        <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400 max-w-xl">
+        <table className="text-xs md:text-lg text-left text-gray-500 dark:text-gray-400 ">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3 dark:text-white">
+              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
                 Pos
               </th>
-              <th scope="col" className="px-6 py-3 dark:text-white">
+              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
                 Name
               </th>
-              <th scope="col" className="px-6 py-3 dark:text-white">
+              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
                 Constructor
               </th>
-              <th scope="col" className="px-6 py-3 dark:text-white">
+              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
                 Points
               </th>
               {/* <th scope="col" className="px-6 py-3">
@@ -90,16 +90,18 @@ function DriverStandings() {
                 className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
                 key={index}
               >
-                <td className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td className="p-2 md:px-6 md:py-3 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
                   {driver.position}
                 </td>
-                <td className="px-6 py-4 dark:text-white">
+                <td className="p-2 md:px-6 md:py-3 dark:text-white">
                   {driver.givenName} {driver.familyName}
                 </td>
-                <td className="px-6 py-4 dark:text-gray-300">
+                <td className="p-2 md:px-6 md:py-3 dark:text-gray-300">
                   {driver.constructorName}
                 </td>
-                <td className="px-6 py-4 dark:text-white">{driver.points}</td>
+                <td className="p-2 md:px-6 md:py-3 text-center dark:text-white">
+                  {driver.points}
+                </td>
                 {/* <td className="px-6 py-4">
                 <a
                   href="#"
