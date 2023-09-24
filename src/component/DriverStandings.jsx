@@ -59,7 +59,7 @@ function DriverStandings() {
   }
 
   return (
-    <div className="w-full bg-image bg-fixed bg-center bg-cover">
+    <div className="w-full bg-mobile md:bg-image bg-fixed bg-center bg-cover">
       <div className="bg-transparent flex flex-wrap justify-center">
         <h1 className="font-bold text-white md:text-center text-2xl p-14 w-full tracking-tight">
           {season} Formula 1 Driver Standing
