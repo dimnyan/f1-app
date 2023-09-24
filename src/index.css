@@ -5,7 +5,13 @@
 /* body {
   background-color: rgb(17 24 39);
 } */
-
+* {
+  font-family: monospace;
+}
 h1 {
   font-family: "Martian Mono", monospace;
+}
+
+.bg-image {
+  background-image: url("/f1-bg.webp");
 }

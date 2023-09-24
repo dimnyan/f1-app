@@ -45,7 +45,7 @@ function Navbar() {
                   location.pathname === "/driver-standings"
                     ? "font-bold md:border-b-2 md:pb-2"
                     : ""
-                }  md:bg-transparent md:p-0  `}
+                }  md:bg-transparent text-base uppercase md:text-lg md:p-0  `}
                 aria-current="page"
               >
                 Driver Standings
@@ -58,7 +58,7 @@ function Navbar() {
                   location.pathname === "/constructor-standings"
                     ? "font-bold md:border-b-2 md:pb-2"
                     : ""
-                }  md:bg-transparent md:p-0 `}
+                }  md:bg-transparent text-base uppercase md:text-lg md:p-0 `}
               >
                 Constructor Standings
               </Link>

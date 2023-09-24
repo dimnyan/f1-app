@@ -50,8 +50,8 @@ function DriverStandings() {
 
   if (isLoading) {
     return (
-      <div className="w-full h-screen flex items-center justify-center">
-        <p className="text-center items-center font-bold text-2xl">
+      <div className="w-full bg-slate-900 h-screen flex items-center justify-center">
+        <p className="text-center text-white items-center font-bold text-2xl md:text-4xl">
           Loading...
         </p>
       </div>
@@ -59,24 +59,30 @@ function DriverStandings() {
   }
 
   return (
-    <div className="w-full">
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg px-5 py-10 md:p-10 flex flex-wrap justify-center ">
-        <h1 className="font-bold text-center text-2xl pb-10 w-full">
+    <div className="w-full bg-image bg-fixed bg-center bg-cover">
+      <div className="bg-transparent flex flex-wrap justify-center">
+        <h1 className="font-bold text-white md:text-center text-2xl p-14 w-full tracking-tight">
           {season} Formula 1 Driver Standing
         </h1>
-        <table className="text-xs md:text-lg text-left text-gray-500 dark:text-gray-400 ">
-          <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full m-2 md:w-2/3 ">
+          <thead className="text-xs md:text-lg uppercase tracking-widest bg-gray-700/70 text-gray-400">
             <tr>
-              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
+              <th
+                scope="col"
+                className="py-2 pl-2 md:px-6 md:py-3 text-white  text-center"
+              >
                 Pos
               </th>
-              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
+              <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 text-white">
                 Name
               </th>
-              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
+              <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 text-white">
                 Constructor
               </th>
-              <th scope="col" className="p-2 md:px-6 md:py-3 dark:text-white">
+              <th
+                scope="col"
+                className="py-2 px-2 md:px-6 md:py-3 text-white  text-center"
+              >
                 Points
               </th>
               {/* <th scope="col" className="px-6 py-3">
@@ -87,25 +93,25 @@ function DriverStandings() {
           <tbody>
             {dataStandings.map((driver, index) => (
               <tr
-                className="bg-white border-b dark:bg-gray-900 dark:border-gray-700"
+                className="text-xs md:text-base border-t bg-gray-900/70 border-gray-700"
                 key={index}
               >
-                <td className="p-2 md:px-6 md:py-3 text-center font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
                   {driver.position}
                 </td>
-                <td className="p-2 md:px-6 md:py-3 dark:text-white">
+                <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
                   {driver.givenName} {driver.familyName}
                 </td>
-                <td className="p-2 md:px-6 md:py-3 dark:text-gray-300">
+                <td className="py-2 pl-2 md:px-6 md:py-3 text-gray-300">
                   {driver.constructorName}
                 </td>
-                <td className="p-2 md:px-6 md:py-3 text-center dark:text-white">
+                <td className="py-2 px-2 md:px-6 md:py-3 text-center text-white">
                   {driver.points}
                 </td>
                 {/* <td className="px-6 py-4">
                 <a
                   href="#"
-                  className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                  className="font-medium text-blue-600 text-blue-500 hover:underline"
                 >
                   View
                 </a>
