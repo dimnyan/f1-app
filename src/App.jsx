@@ -4,6 +4,7 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
+import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import DriverStandings from "./component/DriverStandings";
 import ConstructorStandings from "./component/ConstructorStandings";
@@ -21,6 +22,7 @@ function App() {
             element={<ConstructorStandings />}
           />
         </Routes>
+        <Footer />
       </Router>
     </>
   );

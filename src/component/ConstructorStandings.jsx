@@ -53,12 +53,12 @@ function ConstructorStandings() {
   }
   return (
     <div className="w-full bg-image bg-fixed bg-center bg-cover min-h-screen">
-      <div className=" sm:rounded-lg flex flex-wrap justify-center ">
-        <h1 className="font-bold text-white md:text-center tracking-tight text-2xl p-14 w-full">
+      <div className="flex flex-wrap justify-center ">
+        <h1 className="font-bold text-black md:text-center tracking-tight text-2xl p-14 w-full ">
           {season} Formula 1 Constructor Standings
         </h1>
-        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full m-2 md:w-2/3 ">
-          <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-700/70 text-gray-400">
+        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full m-2 md:w-4/5  ">
+          <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-900/90 text-gray-400">
             <tr>
               <th
                 scope="col"
@@ -86,7 +86,7 @@ function ConstructorStandings() {
           <tbody>
             {constructorStandings.map((constructor, index) => (
               <tr
-                className="text-xs md:text-base border-t bg-gray-900/70 border-gray-700"
+                className="text-xs md:text-base border-t bg-gray-900/80 border-gray-700"
                 key={index}
               >
                 <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
