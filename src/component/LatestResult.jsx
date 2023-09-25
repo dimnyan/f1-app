@@ -23,7 +23,7 @@ function LatestResult() {
   ];
 
   useEffect(() => {
-    fetch("http://ergast.com/api/f1/current/last/results")
+    fetch("https://ergast.com/api/f1/current/last/results")
       .then((response) => response.text())
       .then((data) => {
         const xmlDocument = new DOMParser().parseFromString(
