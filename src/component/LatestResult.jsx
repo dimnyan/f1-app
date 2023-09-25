@@ -131,7 +131,7 @@ function LatestResult() {
               </tbody>
             </table>
           </div>
-          <table className="rounded-xl w-min sm:w-max md:w-max sm:text-lg text-left text-gray-400 mx-2 my-7 ">
+          <table className="rounded-xl table-width  sm:text-lg text-left text-gray-400 mx-2 my-7 ">
             <thead className="text-xs sm:text-lg uppercase tracking-widest bg-gray-900/90 text-gray-400">
               <tr>
                 <th
