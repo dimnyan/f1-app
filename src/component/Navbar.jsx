@@ -40,6 +40,19 @@ function Navbar() {
           <ul className="flex flex-col md:p-0  md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white md:dark:bg-gray-900 dark:border-gray-700">
             <li>
               <Link
+                to={"/latest"}
+                className={`block py-2 pl-3 pr-4 tracking-widest md:font-bold text-white ${
+                  location.pathname === "/latest"
+                    ? "font-bold md:border-b-2 md:pb-2"
+                    : ""
+                }  md:bg-transparent text-base uppercase md:text-lg md:p-0  `}
+                aria-current="page"
+              >
+                Latest Result
+              </Link>
+            </li>
+            <li>
+              <Link
                 to={"/driver-standings"}
                 className={`block py-2 pl-3 pr-4 tracking-widest md:font-bold text-white ${
                   location.pathname === "/driver-standings"

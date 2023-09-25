@@ -8,6 +8,7 @@ import Footer from "./component/Footer";
 import Navbar from "./component/Navbar";
 import DriverStandings from "./component/DriverStandings";
 import ConstructorStandings from "./component/ConstructorStandings";
+import LatestResult from "./component/LatestResult";
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
       <Router>
         <Navbar />
         <Routes>
-          <Route path="/" element={<Navigate to={"/driver-standings"} />} />
+          <Route path="/" element={<Navigate to={"/latest"} />} />
+          <Route path="/latest" element={<LatestResult />} />
           <Route path="/driver-standings" element={<DriverStandings />} />
           <Route
             path="/constructor-standings"
