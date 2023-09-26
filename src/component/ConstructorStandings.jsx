@@ -47,12 +47,12 @@ function ConstructorStandings() {
     return <Loading />;
   }
   return (
-    <div className="w-full bg-image bg-fixed bg-center bg-cover min-h-screen">
+    <div className="w-full bg-image bg-fixed bg-center bg-cover ">
       <div className="flex flex-wrap justify-center ">
         <h1 className="font-bold text-black md:text-center tracking-tight text-2xl p-14 w-full ">
           {season} Formula 1 Constructor Standings
         </h1>
-        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full m-2 md:w-4/5  ">
+        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full mx-2 my-7 md:w-4/5  ">
           <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-900/90 text-gray-400">
             <tr>
               <th

@@ -59,7 +59,7 @@ function DriverStandings() {
         <h1 className="font-bold text-black md:text-center text-2xl px-2 sm:px-14 py-14 w-full tracking-tight">
           {season} Formula 1 Driver Standing
         </h1>
-        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full m-2 md:w-4/5 ">
+        <table className="rounded-xl md:text-lg text-left text-gray-400 w-full mx-2 my-7 md:w-4/5 ">
           <thead className="text-xs md:text-lg uppercase tracking-widest bg-gray-900/90 text-gray-400">
             <tr>
               <th
