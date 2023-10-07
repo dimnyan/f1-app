@@ -52,54 +52,59 @@ function ConstructorStandings() {
         <h1 className="font-bold text-black md:text-center tracking-tight text-2xl p-14 w-full ">
           {season} Formula 1 Constructor Standings
         </h1>
-        <table className=" rounded-xl md:text-lg text-left text-gray-400 w-full mx-2 my-7 md:w-4/5  ">
-          <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-900/90 text-gray-400">
-            <tr>
-              <th
-                scope="col"
-                className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
-              >
-                Pos
-              </th>
-              <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 text-white">
-                Name
-              </th>
-              <th
-                scope="col"
-                className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
-              >
-                Wins
-              </th>
-              <th
-                scope="col"
-                className="py-2 px-2 md:px-6 md:py-3 text-white text-center"
-              >
-                Points
-              </th>
-            </tr>
-          </thead>
-          <tbody>
-            {constructorStandings.map((constructor, index) => (
-              <tr
-                className="text-xs md:text-base border-t bg-gray-900/80 border-gray-700"
-                key={index}
-              >
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
-                  {constructor.position}
-                </td>
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
-                  {constructor.constructorName}
-                </td>
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-white text-center">
-                  {constructor.wins}
-                </td>
-                <td className="py-2 px-2 md:px-6 md:py-3 text-white text-center">
-                  {constructor.points}
-                </td>
+        <div className="rounded-xl p-2 bg-gray-900/90 mx-2 my-10">
+          <table className=" table-width sm:text-lg text-left text-gray-400">
+            <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-900/90 text-gray-400">
+              <tr>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
+                >
+                  Pos
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
+                >
+                  Wins
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 px-2 md:px-6 md:py-3 text-white text-center"
+                >
+                  Points
+                </th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {constructorStandings.map((constructor, index) => (
+                <tr
+                  className="text-xs md:text-base border-t bg-gray-900/80 border-gray-700"
+                  key={index}
+                >
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
+                    {constructor.position}
+                  </td>
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
+                    {constructor.constructorName}
+                  </td>
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white text-center">
+                    {constructor.wins}
+                  </td>
+                  <td className="py-2 px-2 md:px-6 md:py-3 text-white text-center">
+                    {constructor.points}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );

@@ -59,51 +59,58 @@ function DriverStandings() {
         <h1 className="font-bold text-black md:text-center text-2xl px-2 sm:px-14 py-14 w-full tracking-tight">
           {season} Formula 1 Driver Standing
         </h1>
-        <table className="rounded-xl md:text-lg text-left text-gray-400 w-full mx-2 my-7 md:w-4/5 ">
-          <thead className="text-xs md:text-lg uppercase tracking-widest bg-gray-900/90 text-gray-400">
-            <tr>
-              <th
-                scope="col"
-                className="py-2 pl-2 md:px-6 md:py-3 text-white  text-center"
-              >
-                Pos
-              </th>
-              <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 text-white">
-                Name
-              </th>
-              <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 text-white">
-                Constructor
-              </th>
-              <th
-                scope="col"
-                className="py-2 px-2 md:px-6 md:py-3 text-white  text-center"
-              >
-                Points
-              </th>
-              {/* <th scope="col" className="px-6 py-3">
+        <div className="rounded-xl p-2 bg-gray-900/90 mx-2 my-10">
+          <table className=" table-width sm:text-lg text-left text-gray-400">
+            <thead className="text-xs md:text-lg uppercase tracking-widest text-gray-400">
+              <tr>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white  text-center"
+                >
+                  Pos
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
+                >
+                  Name
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
+                >
+                  Constructor
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 px-2 md:px-6 md:py-3 text-white  text-center"
+                >
+                  Points
+                </th>
+                {/* <th scope="col" className="px-6 py-3">
                 Profile
               </th> */}
-            </tr>
-          </thead>
-          <tbody>
-            {dataStandings.map((driver, index) => (
-              <tr
-                className="text-xs md:text-base border-t bg-gray-900/80 border-gray-700"
-                key={index}
-              >
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
-                  {driver.position}
-                </td>
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
-                  {driver.givenName} {driver.familyName}
-                </td>
-                <td className="py-2 pl-2 md:px-6 md:py-3 text-gray-300">
-                  {driver.constructorName}
-                </td>
-                <td className="py-2 px-2 md:px-6 md:py-3 text-center text-white">
-                  {driver.points}
-                </td>
-                {/* <td className="px-6 py-4">
+              </tr>
+            </thead>
+            <tbody>
+              {dataStandings.map((driver, index) => (
+                <tr
+                  className="text-xs md:text-base border-t border-gray-700"
+                  key={index}
+                >
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
+                    {driver.position}
+                  </td>
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
+                    {driver.givenName} {driver.familyName}
+                  </td>
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-gray-300">
+                    {driver.constructorName}
+                  </td>
+                  <td className="py-2 px-2 md:px-6 md:py-3 text-center text-white">
+                    {driver.points}
+                  </td>
+                  {/* <td className="px-6 py-4">
                 <a
                   href="#"
                   className="font-medium text-blue-600 text-blue-500 hover:underline"
@@ -111,10 +118,11 @@ function DriverStandings() {
                   View
                 </a>
               </td> */}
-              </tr>
-            ))}
-          </tbody>
-        </table>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   );
