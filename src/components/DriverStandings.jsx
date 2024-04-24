@@ -54,36 +54,30 @@ function DriverStandings() {
   }
 
   return (
-    <div className="w-full bg-image bg-fixed bg-center bg-cover">
+    <div className="w-full">
       <div className="flex flex-wrap justify-center">
-        <h1 className="font-bold text-black md:text-center text-2xl px-2 sm:px-14 py-14 w-full tracking-tight">
-          {season} Formula 1 Driver Standing
+        <h1 className="font-bold text-center text-2xl px-2 sm:px-14 py-14 w-full tracking-tight mt-8 text-red-500 2xl:text-4xl">
+          {season} Driver Standings
         </h1>
-        <div className="rounded-xl p-2 bg-gray-900/90 mx-2 my-10">
-          <table className=" table-width sm:text-lg text-left text-gray-400">
-            <thead className="text-xs md:text-lg uppercase tracking-widest text-gray-400">
+        <div className="rounded-xl mx-2 my-10 border-red-500 border-2">
+          <table className=" table-width sm:text-lg text-left ">
+            <thead className="text-xs md:text-lg uppercase tracking-widest text-red-600 2xl:text-2xl">
               <tr>
                 <th
                   scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white  text-center"
+                  className="py-2 pl-2 md:px-6 md:py-3  text-center"
                 >
                   Pos
                 </th>
-                <th
-                  scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
-                >
+                <th scope="col" className="py-2 pl-2 md:px-6 md:py-3">
                   Name
                 </th>
-                <th
-                  scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
-                >
+                <th scope="col" className="py-2 pl-2 md:px-6 md:py-3 xl:pr-32">
                   Constructor
                 </th>
                 <th
                   scope="col"
-                  className="py-2 px-2 md:px-6 md:py-3 text-white  text-center"
+                  className="py-2 px-2 md:px-6 md:py-3 text-center"
                 >
                   Points
                 </th>
@@ -95,19 +89,21 @@ function DriverStandings() {
             <tbody>
               {dataStandings.map((driver, index) => (
                 <tr
-                  className="text-xs md:text-base border-t border-gray-700"
+                  className={`text-xs md:text-base border-t border-red-600 hover:bg-red-500 hover:text-white  xl:text-xl 2xl:text-2xl ${
+                    index === 0 ? "font-bold" : ""
+                  }`}
                   key={index}
                 >
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium whitespace-nowrap">
                     {driver.position}
                   </td>
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
+                  <td className="py-2 pl-2 md:px-6 md:py-3 xl:pr-20">
                     {driver.givenName} {driver.familyName}
                   </td>
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-gray-300">
+                  <td className="py-2 pl-2 md:px-6 md:py-3">
                     {driver.constructorName}
                   </td>
-                  <td className="py-2 px-2 md:px-6 md:py-3 text-center text-white">
+                  <td className="py-2 px-2 md:px-6 md:py-3 text-center">
                     {driver.points}
                   </td>
                   {/* <td className="px-6 py-4">

@@ -15,8 +15,11 @@ h1 {
 .bg-image {
   background-image: url("/f1-bg.webp");
 }
-@media (max-width: 321px) {
+@media (max-width: 650px) {
   .table-width {
     width: fit-content;
+  }
+  .hide-column {
+    display: none;
   }
 }

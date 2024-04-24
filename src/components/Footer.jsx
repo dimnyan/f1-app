@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <>
-      <footer className="text-white pb-6 pt-3 bg-gray-900  top-0 left-0 border-b border-gray-900 ">
+      <footer className="text-white pb-6 pt-3 bg-red-600  top-0 left-0  ">
         <div className="px-7 pt-2 pb-8 md:pb-6 lg:w-2/3 mx-auto">
           <h2 className="font-bold mx-auto text-lg w-max pb-3 uppercase">
             My Socials

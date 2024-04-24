@@ -33,72 +33,83 @@ function ConstructorStandings() {
           const points = standings.getAttribute("points");
           const position = standings.getAttribute("position");
           const constructorName = constructor.querySelector("Name").textContent;
+          const url = constructor.getAttribute("url");
           // console.log(constructorName);
-          return { position, constructorName, wins, points };
+          return { position, constructorName, wins, points, url };
         });
-
+        // console.log(xmlDocument);
         setConstructorStandings(constructorData);
         setSeason(season);
         setIsLoading(false);
       });
   }, []);
-  // console.log(constructorData);
+  console.log(constructorStandings);
   if (isLoading) {
     return <Loading />;
   }
   return (
-    <div className="w-full bg-image bg-fixed bg-center bg-cover ">
+    <div className="w-full">
       <div className="flex flex-wrap justify-center ">
-        <h1 className="font-bold text-black md:text-center tracking-tight text-2xl p-14 w-full ">
+        <h1 className="font-bold md:text-center text-2xl px-2 sm:px-14 py-14 w-full tracking-tight mt-8 text-red-500 2xl:text-4xl">
           {season} Formula 1 Constructor Standings
         </h1>
-        <div className="rounded-xl p-2 bg-gray-900/90 mx-2 my-10">
-          <table className=" table-width sm:text-lg text-left text-gray-400">
-            <thead className="text-xs md:text-base uppercase tracking-widest bg-gray-900/90 text-gray-400">
+        <div className="rounded-xl mx-2 my-10 border-red-500 border-2">
+          <table className=" table-width sm:text-lg text-left">
+            <thead className="text-xs md:text-base uppercase tracking-widest text-red-600 2xl:text-2xl">
               <tr>
                 <th
                   scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-center"
                 >
                   Pos
                 </th>
-                <th
-                  scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white"
-                >
+                <th scope="col" className="py-2 pl-2 md:px-6 md:py-3">
                   Name
                 </th>
                 <th
                   scope="col"
-                  className="py-2 pl-2 md:px-6 md:py-3 text-white text-center"
+                  className="py-2 pl-2 md:px-6 md:py-3 text-center"
                 >
                   Wins
                 </th>
                 <th
                   scope="col"
-                  className="py-2 px-2 md:px-6 md:py-3 text-white text-center"
+                  className="py-2 px-2 md:px-6 md:py-3 text-center"
                 >
                   Points
+                </th>
+                <th
+                  scope="col"
+                  className="py-2 px-2 md:px-6 md:py-3 text-center"
+                >
+                  URL
                 </th>
               </tr>
             </thead>
             <tbody>
               {constructorStandings.map((constructor, index) => (
                 <tr
-                  className="text-xs md:text-base border-t bg-gray-900/80 border-gray-700"
+                  className={`text-xs md:text-base border-t border-red-600 hover:bg-red-500 hover:text-white  xl:text-xl 2xl:text-2xl ${
+                    index === 0 ? "font-bold" : ""
+                  }`}
                   key={index}
                 >
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap text-white">
+                  <td className="py-2 pl-2 md:px-6 md:py-3 text-center font-medium  whitespace-nowrap">
                     {constructor.position}
                   </td>
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white">
+                  <td className="py-2 pl-2 md:px-6 md:py-3 xl:pr-20">
                     {constructor.constructorName}
                   </td>
-                  <td className="py-2 pl-2 md:px-6 md:py-3 text-white text-center">
+                  <td className="py-2 pl-2 md:px-6 md:py-3 xl:px-20 text-center">
                     {constructor.wins}
                   </td>
-                  <td className="py-2 px-2 md:px-6 md:py-3 text-white text-center">
+                  <td className="py-2 px-2 md:px-6 md:py-3 xl:px-20 text-center">
                     {constructor.points}
+                  </td>
+                  <td className="py-2 px-2 md:px-6 md:py-3 xl:px-12 text-center underline">
+                    <a target="_blank" rel="noreferrer" href={constructor.url}>
+                      Visit Wiki
+                    </a>
                   </td>
                 </tr>
               ))}
