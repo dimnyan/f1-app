@@ -12,12 +12,17 @@ function Loading() {
 
   return (
     <div className="w-full h-screen flex flex-col items-center justify-center">
-      <p className="text-center text-red-500 items-center font-bold text-2xl md:text-4xl">
-        Loading...
-      </p>
-      {loadingTime > 4 && (
+      {loadingTime > 6 ? (
+        <p className="text-center text-red-500 items-center font-bold text-2xl md:text-4xl">
+          Server is Currently Not Available. <br /> Please Try again Later
+        </p>
+      ) : loadingTime > 3 ? (
         <p className="text-center text-red-500 items-center font-bold text-2xl md:text-4xl">
           Hold on, Server might be busy...
+        </p>
+      ) : (
+        <p className="text-center text-red-500 items-center font-bold text-2xl md:text-4xl">
+          Loading...
         </p>
       )}
     </div>

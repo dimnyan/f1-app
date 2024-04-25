@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import Loading from "./Loading";
-import Error from "./Error";
 
 function LatestResult() {
   const [circuitData, setCircuitData] = useState([]);
@@ -36,6 +35,7 @@ function LatestResult() {
         setIsLoading(false);
       } catch (e) {
         setIsError(true);
+        // console.log("error here");
         console.error(e);
       }
     };
@@ -54,15 +54,13 @@ function LatestResult() {
   };
 
   // console.log(circuitData);
+  console.log(isError);
 
   if (isLoading) {
     return <Loading />;
-  } else if (isError) {
-    return <Error />;
   }
 
   return (
-    // <div className="w-full bg-image bg-fixed bg-center bg-cover">
     <div className="w-full bg-white">
       {isLoading ? (
         <Loading />
@@ -136,9 +134,6 @@ function LatestResult() {
                     >
                       Points
                     </th>
-                    {/* <th scope="col" className="px-6 py-3">
-                Profile
-              </th> */}
                   </tr>
                 </thead>
                 <tbody>
