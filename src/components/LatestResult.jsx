@@ -8,7 +8,7 @@ function LatestResult() {
   const [isLoading, setIsLoading] = useState(true);
   const [isError, setIsError] = useState(false);
 
-  const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  // const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   const months = [
     "January",
     "February",
@@ -58,7 +58,7 @@ function LatestResult() {
   if (isLoading) {
     return <Loading />;
   } else if (isError) {
-    <Error />;
+    return <Error />;
   }
 
   return (
