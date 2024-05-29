@@ -33,7 +33,7 @@ function LatestResult() {
         setResultData(result.Results);
         setCircuitData(result);
         setIsLoading(false);
-        console.log(result.Results);
+        // console.log(result.Results);
       } catch (e) {
         setIsError(true);
         // console.log("error here");
