@@ -33,6 +33,7 @@ function LatestResult() {
         setResultData(result.Results);
         setCircuitData(result);
         setIsLoading(false);
+        console.log(result.Results);
       } catch (e) {
         setIsError(true);
         // console.log("error here");
@@ -139,9 +140,12 @@ function LatestResult() {
                 <tbody>
                   {resultData.map((driver, index) => (
                     <tr
-                      className={`text-xs sm:text-base border-t border-red-600 sm:tracking-wider hover:bg-red-500 hover:text-white xl:text-xl 2xl:text-2xl ${
-                        driver.FastestLap.rank == "1" ? "text-purple-500" : ""
-                      } ${index < 3 ? "font-bold" : ""}`}
+                      // className={`text-xs sm:text-base border-t border-red-600 sm:tracking-wider hover:bg-red-500 hover:text-white xl:text-xl 2xl:text-2xl ${
+                      //   driver.FastestLap.rank == "1" ? "text-purple-500" : ""
+                      // } ${index < 3 ? "font-bold" : ""}`}
+                      className={`text-xs sm:text-base border-t border-red-600 sm:tracking-wider hover:bg-red-500 hover:text-white xl:text-xl 2xl:text-2xl  ${
+                        index < 3 ? "font-bold" : ""
+                      }`}
                       key={index}
                     >
                       <td className="py-2 pl-2 sm:px-6 sm:py-3 text-center whitespace-nowrap">
