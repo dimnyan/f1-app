@@ -50,12 +50,12 @@ function LatestResult() {
     const raceMonth = parseInt(dateArray[1]);
     const raceDate = dateArray[2];
 
-    const month = months[raceMonth];
+    const month = months[raceMonth - 1];
     return raceDate + " " + month + " " + raceYear;
   };
 
   // console.log(circuitData);
-  console.log(isError);
+  // console.log(isError);
 
   if (isLoading) {
     return <Loading />;
